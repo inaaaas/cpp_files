@@ -8,10 +8,9 @@ int main() {
     std::ofstream summary("summary.txt");
     std::ofstream error("error.txt");
 
-    if (!logfile.is_open() || !summary.is_open() || !error.is_open()) {
-        std::cerr << "File open fail" << std::endl;
-        return 1;
-    }
+    if (!logfile)  { std::cerr<<"Cannot open log.txt\n";   return 1; }
+    if (!summary)  { std::cerr<<"Cannot open summary.txt\n"; return 1; }
+    if (!error)    { std::cerr<<"Cannot open error.txt\n";   return 1; }
     std::string line;
     int info = 0, err = 0, warning = 0;
 
@@ -28,9 +27,9 @@ int main() {
         }
     }
 
-    summary << "INFO count: " << info << std::endl;
-    summary << "ERROR count: " << err << std::endl;
-    summary << "WARNING count: " << warning <<std::endl;
+    summary << "INFO: " << info << "\n"
+            << "ERROR: " << err << "\n"
+            << "WARNING: " << warning << "\n";
 
     logfile.close();
     summary.close();
