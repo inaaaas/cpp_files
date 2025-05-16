@@ -24,6 +24,10 @@ int main() {
     //std::string word;
     // file_read >> word;
 
+    std::string header;
+    std::getline(file_read, header);
+    
+    
     std::vector<Student> students;
 
     std::string line;
