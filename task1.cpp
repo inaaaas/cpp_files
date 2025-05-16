@@ -16,10 +16,8 @@ int main() {
     std::ifstream file_read("input.csv");
     std::ofstream file_write("output.txt");
 
-    if (!file_read.is_open() || !file_write.is_open()) {
-        std::cerr << "File open fail." << std::endl;
-        return 1;
-    }
+    if (!file_read)  std::cerr<<"Cannot open input.csv\n",  return 1;
+    if (!file_write) std::cerr<<"Cannot open output.txt\n", return 1;
 
     //std::string word;
     // file_read >> word;
