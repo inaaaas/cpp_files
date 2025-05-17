@@ -55,7 +55,10 @@ int main() {
     else if (choice == 2) {
         decrypt(input, output);
     }
-
+    else {
+          std::cerr<<"Invalid choice, exiting\n";
+          return 1;
+    }
     input.close();
     output.close();
     return 0;
