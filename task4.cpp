@@ -38,11 +38,11 @@ int main() {
     std::ifstream input("output3.txt");
     std::ofstream output("output4.txt");
     if (!input.is_open()) {
-        std::cerr << "input3.txt file open fail" << std::endl;
+        std::cerr << "output3.txt file open fail" << std::endl;
         return 1;
     }
     if (!output.is_open()) {
-        std::cerr << "output3.txt file open fail" << std::endl;
+        std::cerr << "output4.txt file open fail" << std::endl;
         return 1;
     }
 
